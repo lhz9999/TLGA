@@ -17,18 +17,17 @@ TLGA is an abstractive model proposed for Financial News Summarization, which co
 
 ## Usage
 
-1. train the model
+1. How to train the model
    
    ```
    python train.py 
-       -m
-           Path to the trained model used. If empty, the model will start training on the dataset from the very beginning. 
+   python train.py -m /your/model_path/    # Path to the saved model. If empty, it will start a new training. 
    ```
 
-2. test the model
+2. How to test the model
    
    ```
-   python decode.py /your_model_path/   # where you save the model.
+   python decode.py /your_model_path/   # where you save the model
    ```
 
 ## Evaluation Metrics
@@ -39,10 +38,10 @@ TLGA is an abstractive model proposed for Financial News Summarization, which co
    ROUGE measures the overlap between the system-generated summary and one or more reference summaries. The official pakage ROUGE-1.5.5 is used to evaluate this model, and we report the F1 score of Rouge-1, Rouge-2, and Rouge-L.
 * BART_Score
 
-   To assess the faithfulness and informativeness. It computes the weighted log probability when using the fin-tuned financial BART baseline to convert the predicted text to/from a reference output or the source text.
+   To assess faithfulness and informativeness. It computes the weighted log probability when using the fin-tuned financial BART baseline to convert the predicted text to/from a reference output or the source text.
 ### Extrinsic Evaluation
 
-* We conduct a stock movement prediction task to evaluate the causality and informativeness of predicted summaries, which only adopts generated summaries (no extra features) to decide on selling or buying shares of listed companies. Accuracy, F1-score, and Matthews Correlation Coefficient (MCC) are considered metrics for evaluation.
+* We conduct a stock movement prediction task to evaluate the causality and informativeness of predicted summaries. We only employ generated summaries (no extra features) to decide on selling or buying shares of listed companies. Accuracy, F1-score, and Matthews Correlation Coefficient (MCC) are considered metrics for evaluation.
 
 # Dataset
 
