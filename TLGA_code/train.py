@@ -54,7 +54,7 @@ class Train(object):
         torch.save(state, model_save_path)
 
     def setup_train(self, model_file_path=None):
-        """模型初始化或加载、初始化迭代次数、损失、优化器"""
+       
         self.model = Model(model_file_path)
 
         params = list(self.model.encoder.parameters()) + list(self.model.decoder.parameters()) + \
